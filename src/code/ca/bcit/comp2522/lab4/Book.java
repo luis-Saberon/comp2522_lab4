@@ -1,19 +1,14 @@
 package ca.bcit.comp2522.lab4;
 
-
-//FIX THE GETTER AND VALIDATOR FOR AUTHOR WHEN ABLE TO
-//IMPLEMENT PRINTABLE WHEN ABLE TO
-
-
 /**
  * @author Luis Saberon, Hailey Kim
  * @version 1
  */
-public class Book implements Comparable<Book>,
-                             Reversible{
+public class Book implements Comparable<Book>, Reversible, Printable
+{
 
     private final String title;
-    private final String author;
+    private final Author author;
     private final int yearPublished;
 
     private final static int MAX_CHAR_FOR_TITLE = 100;
@@ -23,18 +18,19 @@ public class Book implements Comparable<Book>,
     /**
      * REMEMBER TO CHANGE AUTHOR FROM STRING TO AUTHOR OBJECT WHEN IT'S READY
      * Contains basic information about a book
-     * @param title is the title of the book
+     *
+     * @param title         is the title of the book
      * @param yearPublished is the year the book was published
-     * @param author is the author of the book.
+     * @param author        is the author of the book.
      */
     public Book(final String title,
                 final int yearPublished,
-                final String author)
+                final Author author)
     {
 
         validateTitle(title);
         validateYearPublished(yearPublished);
-        // VALIDATE AUTHOR WHEN ABLE TO
+        validateAuthor(author);
 
         this.title         = title;
         this.yearPublished = yearPublished;
@@ -77,6 +73,14 @@ public class Book implements Comparable<Book>,
         }
     }
 
+    private static void validateAuthor(final Author author)
+    {
+        if (author == null)
+        {
+            throw new IllegalArgumentException("Author cannot be null");
+        }
+    }
+
     /**
      * Gets the year the book was published
      * @return int yearPublished
@@ -99,7 +103,7 @@ public class Book implements Comparable<Book>,
      * Gets the author
      * @return Author author
      */
-    public String getAuthor()
+    public Author getAuthor()
     {
         return author;
     }
@@ -118,19 +122,27 @@ public class Book implements Comparable<Book>,
      * @return this books age - that books age
      */
     @Override
-    public int compareTo(final Book that) {
-        return this.getAge()-that.getAge();
+    public int compareTo(final Book that)
+    {
+        return this.getAge() - that.getAge();
     }
 
     /**
      * Prints out a reversed title.
      */
     @Override
-    public void reverse() {
+    public void reverse()
+    {
         StringBuilder builder;
         builder = new StringBuilder();
 
         builder.append(this.title);
         System.out.println(builder.reverse());
+    }
+
+    @Override
+    public void display()
+    {
+        System.out.println("Book: " + title + ", (" + yearPublished + "), Author: " + author);
     }
 }
