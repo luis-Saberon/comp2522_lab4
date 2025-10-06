@@ -106,10 +106,7 @@ public class Person implements Comparable<Person>, Printable, Reversible
      */
     public void display()
     {
-        System.out.print("Person: ");
-        name.display();
-
-        System.out.print("Born: " + dateOfBirth.getFormattedDate());
+        System.out.print("Person: " + name + ", Born: " + dateOfBirth.getFormattedDate());
 
         if (dateOfDeath != null)
         {
