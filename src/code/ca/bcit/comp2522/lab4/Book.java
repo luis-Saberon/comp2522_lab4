@@ -143,6 +143,6 @@ public class Book implements Comparable<Book>, Reversible, Printable
     @Override
     public void display()
     {
-        System.out.println("Book: " + title + ", (" + yearPublished + "), Author: " + author);
+        System.out.println("Book: " + title + " (" + yearPublished + "), Author: " + author);
     }
 }

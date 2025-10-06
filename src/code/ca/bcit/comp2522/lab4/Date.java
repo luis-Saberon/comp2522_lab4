@@ -6,7 +6,8 @@ package ca.bcit.comp2522.lab4;
  * @author Hailey Kim, Luis Saberon
  * @version 1.0
  */
-public class Date {
+public class Date implements Printable
+{
 
     private static final int MIN_YEAR = 1800;
     private static final int CURRENT_YEAR = 2025;
@@ -371,5 +372,11 @@ public class Date {
                 getMonthName(),
                 day,
                 year);
+    }
+
+    @Override
+    public void display()
+    {
+        System.out.println("Date: " + getFormattedDate() + " (YYYY/MM/DD)");
     }
 }
