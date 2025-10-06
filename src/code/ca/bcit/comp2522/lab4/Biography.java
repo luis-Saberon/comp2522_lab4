@@ -1,6 +1,8 @@
 package ca.bcit.comp2522.lab4;
 
 /**
+ * Represents a biography.
+ *
  * @author Luis Saberon, Hailey Kim
  * @version 1
  */
@@ -9,7 +11,8 @@ public class Biography extends Book implements Printable
     private final Person subject;
 
     /**
-     *Contains basic information about a biography, a specific kind of book
+     * Contains basic information about a biography, a specific kind of book
+     *
      * @param title is the tile of the book
      * @param author is the author of the book
      * @param yearPublished is the year the book was published
@@ -22,11 +25,14 @@ public class Biography extends Book implements Printable
     {
         super(title, yearPublished, author);
 
+        validateSubject(subject);
+
         this.subject = subject;
     }
 
     /**
-     * Validates subject
+     * Validates that the subject is not null.
+     *
      * @param subject is the subject to validate
      */
     private static void validateSubject(final Person subject)
@@ -38,7 +44,8 @@ public class Biography extends Book implements Printable
     }
 
     /**
-     * Gets the subject of the biography
+     * Gets the subject of the biography.
+     *
      * @return Person subject
      */
     public Person getSubject()
@@ -49,7 +56,8 @@ public class Biography extends Book implements Printable
     /**
      * Returns true if comparable object is a biography with the same
      * subject, false for all other cases.
-     * @param o   the reference object with which to compare.
+     *
+     * @param o the reference object with which to compare.
      * @return boolean equals
      */
     @Override
@@ -73,6 +81,7 @@ public class Biography extends Book implements Printable
     /**
      * Gets the hashcode for the biography, based off of the
      * subject hashcode
+     *
      * @return int hashCode
      */
     @Override
@@ -81,6 +90,9 @@ public class Biography extends Book implements Printable
         return this.subject.hashCode();
     }
 
+    /**
+     * Displays the biography information.
+     */
     @Override
     public void display()
     {

@@ -1,7 +1,7 @@
 package ca.bcit.comp2522.lab4;
 
 /**
- * Represents an author.
+ * Represents an author with a name, lifespan, and literary genre.
  *
  * @author Hailey Kim, Luis Saberon
  * @version 1.0
@@ -33,7 +33,8 @@ public class Author extends Person implements Printable
     }
 
     /**
-     * Validates the genre string.
+     * Validates that the given genre string is not null, blank,
+     * and does not exceed the maximum allowed length.
      *
      * @param genre the genre to validate
      * @throws IllegalArgumentException if the genre is invalid

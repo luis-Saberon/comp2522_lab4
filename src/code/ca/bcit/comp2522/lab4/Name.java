@@ -14,7 +14,7 @@ public class Name implements Printable
     private final String last;
 
     /**
-     * Constructors
+     * Constructors.
      *
      * @param first the first name
      * @param last  the last name
@@ -30,7 +30,8 @@ public class Name implements Printable
     }
 
     /**
-     * Validates a name string.
+     * Validates a name-like string to ensure it is not null, not blank,
+     * and does not exceed the maximum allowed length.
      *
      * @param name                      the name
      * @param field                     a descriptive label for the name

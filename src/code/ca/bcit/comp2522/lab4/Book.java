@@ -1,12 +1,13 @@
 package ca.bcit.comp2522.lab4;
 
 /**
+ * Represents a general Book object that contains information.
+ *
  * @author Luis Saberon, Hailey Kim
  * @version 1
  */
 public class Book implements Comparable<Book>, Reversible, Printable
 {
-
     private final String title;
     private final Author author;
     private final int yearPublished;
@@ -16,7 +17,6 @@ public class Book implements Comparable<Book>, Reversible, Printable
     private final static int CURRENT_YEAR = 2025;
 
     /**
-     * REMEMBER TO CHANGE AUTHOR FROM STRING TO AUTHOR OBJECT WHEN IT'S READY
      * Contains basic information about a book
      *
      * @param title         is the title of the book
@@ -39,7 +39,8 @@ public class Book implements Comparable<Book>, Reversible, Printable
 
     /**
      * Validates that the title isn't blank or null, and is less
-     * than the max characters allowed
+     * than the max characters allowed.
+     *
      * @param title String title
      */
     private static void validateTitle(final String title)
@@ -58,6 +59,7 @@ public class Book implements Comparable<Book>, Reversible, Printable
     /**
      * Validates that the year published is between the
      * min year published and the current year.
+     *
      * @param yearPublished int yearPublished
      */
     private static void validateYearPublished(final int yearPublished)
@@ -73,6 +75,12 @@ public class Book implements Comparable<Book>, Reversible, Printable
         }
     }
 
+    /**
+     * Validates that the author is not null.
+     *
+     * @param author the author to validate
+     * @throws IllegalArgumentException if author is null
+     */
     private static void validateAuthor(final Author author)
     {
         if (author == null)
@@ -82,7 +90,8 @@ public class Book implements Comparable<Book>, Reversible, Printable
     }
 
     /**
-     * Gets the year the book was published
+     * Gets the year the book was published.
+     *
      * @return int yearPublished
      */
     public int getYearPublished()
@@ -91,7 +100,8 @@ public class Book implements Comparable<Book>, Reversible, Printable
     }
 
     /**
-     * Gets the title
+     * Gets the title.
+     *
      * @return String title
      */
     public String getTitle()
@@ -100,7 +110,8 @@ public class Book implements Comparable<Book>, Reversible, Printable
     }
 
     /**
-     * Gets the author
+     * Gets the author.
+     *
      * @return Author author
      */
     public Author getAuthor()
@@ -109,7 +120,8 @@ public class Book implements Comparable<Book>, Reversible, Printable
     }
 
     /**
-     * Gets the age of the book
+     * Gets the age of the book.
+     *
      * @return int age
      */
     public int getAge()
@@ -117,7 +129,8 @@ public class Book implements Comparable<Book>, Reversible, Printable
         return CURRENT_YEAR - yearPublished;
     }
     /**
-     * Compares books, books that are older are "bigger"
+     * Compares books, books that are older are "bigger".
+     *
      * @param that is the book we are comparing it to.
      * @return this books age - that books age
      */
@@ -140,6 +153,9 @@ public class Book implements Comparable<Book>, Reversible, Printable
         System.out.println(builder.reverse());
     }
 
+    /**
+     * Displays information about the book.
+     */
     @Override
     public void display()
     {

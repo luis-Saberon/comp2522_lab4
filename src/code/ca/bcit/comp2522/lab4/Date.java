@@ -374,6 +374,9 @@ public class Date implements Printable
                 year);
     }
 
+    /**
+     * Displays the formatted date.
+     */
     @Override
     public void display()
     {
