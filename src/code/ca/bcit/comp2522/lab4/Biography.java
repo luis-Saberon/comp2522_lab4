@@ -4,12 +4,9 @@ package ca.bcit.comp2522.lab4;
  * @author Luis Saberon, Hailey Kim
  * @version 1
  */
-public class Biography extends Book{
-
-    /**
-     * OVERRRIDE PRINTABLE, FIX AUTHOR, FIX SUBJECT
-     */
-    private final String subject;
+public class Biography extends Book implements Printable
+{
+    private final Person subject;
 
     /**
      *Contains basic information about a biography, a specific kind of book
@@ -19,11 +16,12 @@ public class Biography extends Book{
      * @param subject is the person for whom the book is about
      */
     public Biography(final String title,
-                     final String author,
+                     final Author author,
                      final int yearPublished,
-                     final String subject)
+                     final Person subject)
     {
         super(title, yearPublished, author);
+
         this.subject = subject;
     }
 
@@ -31,7 +29,7 @@ public class Biography extends Book{
      * Validates subject
      * @param subject is the subject to validate
      */
-    private static void validateSubject(final String subject)
+    private static void validateSubject(final Person subject)
     {
         if(subject == null)
         {
@@ -43,7 +41,7 @@ public class Biography extends Book{
      * Gets the subject of the biography
      * @return Person subject
      */
-    public String getSubject()
+    public Person getSubject()
     {
         return subject;
     }
@@ -67,7 +65,7 @@ public class Biography extends Book{
             return false;
         }
 
-        final String thatSubject = ((Biography)o).getSubject();
+        final Person thatSubject = ((Biography)o).getSubject();
 
         return this.subject.equals(thatSubject);
     }
@@ -81,5 +79,13 @@ public class Biography extends Book{
     public int hashCode()
     {
         return this.subject.hashCode();
+    }
+
+    @Override
+    public void display()
+    {
+        System.out.println("Biography: " + getTitle() + " (" + getYearPublished() + ")");
+        System.out.println("Author: " + getAuthor());
+        System.out.println("Subject: " + subject);
     }
 }
