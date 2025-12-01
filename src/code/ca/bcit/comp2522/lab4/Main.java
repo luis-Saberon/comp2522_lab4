@@ -2,16 +2,14 @@ package ca.bcit.comp2522.lab4;
 
 /**
  * Main file for displaying book and author functions
- * a
  *
  * @author Luis Saberon, Hailey Kim
  * @version 1.0
  */
-public class main
+public class Main
 {
 
-
-    private static final Date   a1Birth = new Date(1903, 6, 35);
+    private static final Date   a1Birth = new Date(1903, 6, 25);
     private static final Date   a1Death = new Date(1950, 1, 21);
     private static final String genre1  = "Sci-fi";
     private static final Name   n1      = new Name("George", "Orwell");

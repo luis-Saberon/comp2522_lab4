@@ -9,7 +9,7 @@ package ca.bcit.comp2522.lab4;
 public class Date implements Printable
 {
 
-    private static final int MIN_YEAR = 1800;
+    private static final int MIN_YEAR = 1700;
     private static final int CURRENT_YEAR = 2025;
     private static final int CENTURY_21ST = 2000;
     private static final int CENTURY_20TH = 1900;

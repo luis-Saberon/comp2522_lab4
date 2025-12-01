@@ -8,7 +8,7 @@ package ca.bcit.comp2522.lab4;
  */
 public class Name implements Printable
 {
-    private static final int MAX_LENGTH = 50;
+    private static final int MAX_LENGTH = 500;
 
     private final String first;
     private final String last;

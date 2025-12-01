@@ -6,7 +6,10 @@ package ca.bcit.comp2522.lab4;
  * @author Luis Saberon, Hailey Kim
  * @version 1
  */
-public class Book implements Comparable<Book>, Reversible, Printable
+public class Book
+        implements Comparable<Book>,
+        Reversible,
+        Printable
 {
     private final String title;
     private final Author author;
